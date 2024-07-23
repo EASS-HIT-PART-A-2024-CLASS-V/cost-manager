@@ -8,40 +8,25 @@
  - [Getting Started](https://github.com/Raz4546/cost-manager-python/blob/main/README.md#getting-started)
     - [Prerequisites](https://github.com/Raz4546/cost-manager-python?tab=readme-ov-file#prerequisites)
     - [Installation](https://github.com/Raz4546/cost-manager-python?tab=readme-ov-file#installation)
+      - [FastAPI Backend](https://github.com/Raz4546/cost-manager-python?tab=readme-ov-file#fastapi-backend)
+      - [React Frontend](https://github.com/Raz4546/cost-manager-python?tab=readme-ov-file#react-frontend)
     - [Running the Application](https://github.com/Raz4546/cost-manager-python?tab=readme-ov-file#running-the-application)
 - [API Endpoints](https://github.com/Raz4546/cost-manager-python?tab=readme-ov-file#api-endpoints)
 - [Running Tests](https://github.com/Raz4546/cost-manager-python?tab=readme-ov-file#running-tests)
 - [Docker Setup](https://github.com/Raz4546/cost-manager-python?tab=readme-ov-file#docker-setup)
     - [Docker Compose](https://github.com/Raz4546/cost-manager-python?tab=readme-ov-file#docker-compose)
 - [License](https://github.com/Raz4546/cost-manager-python?tab=readme-ov-file#license)
-
-## Project Structure
-
-    .
-    ├──backend
-    │   ├── main.py
-    │   ├── storage.py
-    │   ├── test.py
-    │   ├── requirements.txt
-    │   └── Dockerfile
-    ├── docker-compose.yml
-    └── README.md
-
-    
-- backend/main.py: The main application file with FastAPI routes.
-- backend/storage.py: Contains the Pydantic model for cost items.
-- backend/test.py: Contains tests for the API endpoints.
-- backend/requirements.txt: Lists the Python dependencies.
-- backend/Dockerfile: Instructions to build the Docker image.
-- docker-compose.yml: Configuration for Docker Compose.
+- [Demo](https://github.com/Raz4546/cost-manager-python/blob/main/README.md#demo)
 
 ## Getting Started
 ### Prerequisites
 
 - Python 3.10
 - Docker
-
-## Installation
+- npm
+  
+## FastAPI Backend
+### Installation
 
 1) Clone the repository:
 
@@ -55,24 +40,43 @@ cd cost-management-backend
 ```sh
 pip install -r backend/requirements.txt
 ```
-
-## Running the Application
-
-To run the application locally:
+3) Running the Backend
 
 ```sh
 uvicorn backend.main:app --reload
 ```
-The application will be available at http://127.0.0.1:8000.
+The application will be available at [http://127.0.0.1:8000](http://127.0.0.1:8000).
+
+## React Frontend
+### Installation
+1) Navigate to the frontend directory:
+   ```sh
+   cd frontend
+   ```
+2) Install the dependencies:
+   ```sh
+   npm install
+   ```
+3) Running the Application:
+   ```sh
+   npm run dev
+   ```
+The frontend will be available at [http://localhost:5173](http://localhost:5173).
+
+### Building the Application
+To create a production build of the frontend:
+   ```sh
+   npm run build
+   ```
 
 ## API Endpoints
 
 * `GET /` : Returns a welcome message.
 * `GET /costs` : Retrieves the list of monthly costs.
-* `GET /costs/{cost_id}` : Retrieves a single cost item by ID.
+* `GET /favoriteCosts ` : Retrieves the favorite costs.
 * `POST /addCost` : Adds a new cost item.
 * `DELETE /deleteCost/{item_id}` : Deletes a cost item by ID.
-* `PUT /updateCost` : Updates an existing cost item.
+* `PUT /updateCost/{item_id}` : Updates an existing cost item.
 
 ## Running Tests
 To run the tests:
@@ -89,7 +93,10 @@ To build and run the Docker container using Docker Compose:
 ```sh
 docker-compose up --build
 ```
-2) The application will be available at http://localhost:8000.
+2) The application will be available at [http://localhost:3000](http://localhost:3000).
  ## License
+
+ ## Demo
+ [Link](https://youtu.be/W5LqOPPzjb4)
 
 This project is licensed under the [MIT License](LICENSE).
